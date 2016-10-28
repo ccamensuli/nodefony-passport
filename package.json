@@ -1,8 +1,8 @@
 {
   "name": "passport-nodefony",
   "version": "1.0.0",
-  "description": "Wrapper passport for framework nodefony",
-  "main": "index.js",
+  "description": "Passport strategy wrapper for nodefony framework",
+  "main": "./lib",
   "scripts": {
     "test": "test/index.js"
   },
@@ -13,6 +13,21 @@
     "authentication",
     "javascript"
   ],
-  "author": "CAMENSULI Christophe",
-  "license": "ISC"
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ],
+  "author": {
+    "name": "CAMENSULI Christophe",
+    "email": "ccamensuli@gmail.com",
+    "url": "https://nodefony.net/"
+  },
+  "homepage": "https://nodefony.net/",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ccamensuli/nodefony-passport.git"
+  },
+  "license": "MIT"
 }

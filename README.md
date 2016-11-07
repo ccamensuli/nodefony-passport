@@ -1,7 +1,6 @@
 # nodefony-passport
 
-
-##  **Passport Strategy connector to nodefony Framework**
+##  **Passport Strategy connector to Nodefony Framework**
 
 ####-  **[Nodefony Documentation](https://nodefony.net/documentation)**  
 ####-  **[Nodefony Demo](https://nodefony.net)**  
@@ -15,15 +14,74 @@ have different expectations, and this connector allows Passport to be adapted
 to operate within nodefony environment.
 
 
+## EXAMPLE STRATEGY passport-local
 
+####- [Passport](http://passportjs.org/) strategy for authenticating with [Local](https://github.com/jaredhanson/passport-local)
 
+ROUTING NODEFONY with passport-local 
+```yaml
+local-Area: 
+  pattern:  /local
+  defaults: {controller: "frameworkBundle:default:401"}
 
+```
 
+FIREWALL NODEFONY with passport-local
+```yaml
+local_area:
+  pattern:                    ^/local
+  provider:                   nodefony
+  form_login:
+    login_path:               /login/passport-local
+    default_target_path:      /
+  passport-local:
+    usernameField: 'email'
+    passwordField: 'passwd'
+  context:                    ~
+  redirectHttps:              true
+```
 
+## EXAMPLE STRATEGY passport-google-oauth 
 
+####- [Passport](http://passportjs.org/) strategy for authenticating with [Google Api](https://github.com/jaredhanson/passport-google-oauth)
 
+ROUTING NODEFONY with passport-google-oauth 
+```yaml
 
-### EXAMPLE STRATEGY Passport-GitHub2 
+google-Area: 
+  pattern:  /auth/google
+  defaults: {controller: "frameworkBundle:default:401"}
+
+googleCallBack-Area: 
+  pattern:  /auth/google/callback
+  defaults: {controller: "frameworkBundle:default:401"}
+
+```
+
+FIREWALL NODEFONY with passport-google-oauth 
+
+```yaml
+github_area:
+  pattern:                    ^/auth/google
+  provider:                   nodefony
+  form_login:
+    login_path:               /
+    default_target_path:      /
+  passport-google-oauth20:
+    clientID:                 'GOOGLE_CLIENT_ID'
+    clientSecret:             "GOOGLE_CLIENT_SECRET" 
+    callbackURL:              "https://domain.com/auth/google/callback" 
+    scopes:                   [ 'profile','email' ]
+  context:                    google
+  redirectHttps:              true
+  crossDomain: 
+    allow-origin:	      {"google":"accounts.google.com"}
+      Access-Control:         {
+        "access-control-allow-methods":"GET",
+      }
+```
+
+## EXAMPLE STRATEGY Passport-GitHub2 
 
 ####- [Passport](http://passportjs.org/) strategy for authenticating with [GitHub](https://github.com/cfsghost/passport-github)
 
@@ -62,3 +120,7 @@ github_area:
         "access-control-allow-methods":"GET",
       }
 ```
+
+
+
+

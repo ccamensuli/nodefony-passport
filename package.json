@@ -1,6 +1,6 @@
 {
   "name": "passport-nodefony",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Passport strategy wrapper for nodefony framework",
   "main": "./lib",
   "scripts": {
@@ -27,7 +27,7 @@
   "homepage": "https://nodefony.net/",
   "repository": {
     "type": "git",
-    "url": "git@github.com:ccamensuli/nodefony-passport.git"
+    "url": "git@github.com:nodefony/nodefony-passport.git"
   },
   "license": "MIT"
 }

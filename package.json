@@ -13,6 +13,9 @@
     "authentication",
     "javascript"
   ],
+  "dependencies": {
+    "mocha":"*"
+  },
   "licenses": [
     {
       "type": "MIT",

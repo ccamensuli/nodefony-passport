@@ -65,15 +65,14 @@ github_area:
   pattern:                    ^/auth/google
   provider:                   nodefony
   form_login:
-    login_path:               /
     default_target_path:      /
+    check_path:               /auth/google
   passport-google-oauth20:
     clientID:                 'GOOGLE_CLIENT_ID'
     clientSecret:             "GOOGLE_CLIENT_SECRET" 
     callbackURL:              "https://domain.com/auth/google/callback" 
     scopes:                   [ 'profile','email' ]
   context:                    google
-  redirectHttps:              true
   crossDomain: 
     allow-origin:	      {"google":"accounts.google.com"}
       Access-Control:         {
@@ -105,22 +104,18 @@ github_area:
   pattern:                    ^/auth/github
   provider:                   nodefony
   form_login:
-    login_path:               /
     default_target_path:      /
+    check_path:               /auth/github
   passport-github2:
     clientID:                 'GITHUB_CLIENT_ID'
     clientSecret:             "GITHUB_CLIENT_SECRET" 
     callbackURL:              "https://domain.com/auth/github/callback" 
     scopes:                   [ 'user:email' ]
   context:                    github
-  redirectHttps:              true
   crossDomain: 
     allow-origin:	      {"github":"github.com"}
       Access-Control:         {
         "access-control-allow-methods":"GET",
       }
 ```
-
-
-
 
